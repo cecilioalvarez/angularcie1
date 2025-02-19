@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Persona } from '../persona';
 import { NgFor } from '@angular/common';
+import { PersonaRepositoryService } from '../persona-repository.service';
 
 @Component({
   selector: 'app-lista-personas',
@@ -12,11 +13,10 @@ export class ListaPersonasComponent {
 
   listaPersonas:Persona[]=[];
   
-  constructor() {
+  constructor(private personaRepository:PersonaRepositoryService) {
 
-    this.listaPersonas.push(new Persona("pepe","perez",30));
-    this.listaPersonas.push(new Persona("juan","sanchez",30));
-    this.listaPersonas.push(new Persona("david","gomez",40));
-  }
+
+    this.listaPersonas=personaRepository.buscarTodos();
+    }
 
 }

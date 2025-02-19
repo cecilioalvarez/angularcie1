@@ -1,9 +1,21 @@
 <table>
-<tr *ngFor="let persona of listaPersonas">
-
-    <td>{{persona.nombre}}</td>
-    <td>{{persona.apellidos}}</td>
-    <td>{{persona.edad}}</td>
-</tr>
-
+  <tr *ngFor="let persona of listaPersonas">
+    <td>{{ persona.nombre }}</td>
+    <td>{{ persona.apellidos }}</td>
+    <td>{{ persona.edad }}</td>
+  </tr>
 </table>
+<form>
+  <p>
+    <input type="text" name="nombre" />
+  </p>
+  <p>
+    <input type="text" name="apellidos" />
+  </p>
+  <p>
+    <input type="number" name="edad" />
+  </p>
+  <p>
+    <input type="button" value="insertar"/>
+  </p>
+</form>
