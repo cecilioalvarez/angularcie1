@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class ListaPersonasComponent {
 
+  filtroNombre:string="";
   listaPersonas: Persona[] = [];
   personaInsertar: Persona = {} as Persona;
 
@@ -24,6 +25,11 @@ export class ListaPersonasComponent {
   insertar() {
     //objeto personainsertar 
     this.personaRepository.insertar({ ...this.personaInsertar });
+  }
+
+  filtrar() {
+  
+    this.listaPersonas= this.personaRepository.filtrarNombre(this.filtroNombre);
   }
 
 }

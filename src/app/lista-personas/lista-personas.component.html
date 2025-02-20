@@ -1,3 +1,5 @@
+<input type="text" name="filtroNombre" [(ngModel)]="filtroNombre" />
+<input type="button" value="filtrar" (click)="filtrar()"/>
 <table>
   <tr *ngFor="let persona of listaPersonas">
     <td>{{ persona.nombre }}</td>

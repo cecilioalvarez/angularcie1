@@ -1,6 +1,6 @@
 export class Persona {
 
-    constructor(public nombre:String,public apellidos:String,public edad:number) {
+    constructor(public nombre:string,public apellidos:string,public edad:number) {
 
     }
 }
