@@ -7,15 +7,16 @@
 </table>
 <form>
   <p>
-    <input type="text" name="nombre" />
+    <input type="text" name="nombre"  [(ngModel)]="personaInsertar.nombre"/>
   </p>
   <p>
-    <input type="text" name="apellidos" />
+    <input type="text" name="apellidos"  [(ngModel)]="personaInsertar.apellidos"/>
+  </p>
+
+  <p>
+    <input type="number" name="edad"  [(ngModel)]="personaInsertar.edad"/>
   </p>
   <p>
-    <input type="number" name="edad" />
-  </p>
-  <p>
-    <input type="button" value="insertar"/>
+    <input type="button" value="insertar" (click)="insertar()"/>
   </p>
 </form>
