@@ -31,4 +31,13 @@ export class PersonaRepositoryService {
     return this.listaPersonas.filter((p)=>p.nombre.startsWith(nombre));
   } 
 
+  //borrar del repositorio
+  public borrar(nombre:string) {
+
+    //this.listaPersonas.filter((p)=>!p.nombre.startsWith(nombre))
+    let indice=this.listaPersonas.findIndex((p)=>p.nombre==nombre);
+    this.listaPersonas.splice(indice,1);
+
+  }
+
 }

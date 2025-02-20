@@ -31,5 +31,9 @@ export class ListaPersonasComponent {
   
     this.listaPersonas= this.personaRepository.filtrarNombre(this.filtroNombre);
   }
+  //metodo de borrar del componente
+  borrar(nombre:string) {
+    this.personaRepository.borrar(nombre);
+  }
 
 }
