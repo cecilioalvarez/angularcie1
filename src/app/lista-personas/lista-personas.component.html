@@ -7,7 +7,11 @@
     <td>{{ persona.edad }}</td>
     <td><input type="button" value="borrar" (click)="borrar(persona.nombre)"/></td>
   </tr>
+  <tr [hidden]="!finDeLista" >
+    <td colspan="3" >no hay mas</td>
+  </tr>
 </table>
+
 <form>
   <p>
     <input type="text" name="nombre"  [(ngModel)]="personaInsertar.nombre"/>
