@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { Persona } from '../persona';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { PersonaRepositoryService } from '../persona-repository.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-lista-personas',
-  imports: [NgFor, FormsModule],
+  imports: [NgFor, FormsModule,NgIf],
   templateUrl: './lista-personas.component.html',
   styleUrl: './lista-personas.component.css'
 })
@@ -36,26 +36,24 @@ export class ListaPersonasComponent {
       this.listaPersonas=this.personaRepository.buscarTodos();
     }
     console.log(this.finDeLista);
-    if (this.listaPersonas.length==0) {
-      this.finDeLista=true;
-    }else {
-      this.finDeLista=false;
-    }
+    this.avisoListaVacia();
   }
   //metodo de borrar del componente
   borrar(nombre:string) {
     this.personaRepository.borrar(nombre);
     this.listaPersonas=this.personaRepository.buscarTodos();
+    this.avisoListaVacia();
+  }
+
+  avisoListaVacia() {
     if (this.listaPersonas.length==0) {
       this.finDeLista=true;
     }else {
       this.finDeLista=false;
     }
+
   }
 
-  mensajeFinTabla() {
 
-    
-  }
 
 }
